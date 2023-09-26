@@ -1,4 +1,4 @@
-from home import db,app
+from home import db, app
 from home.models import Restaurant, Pizza, RestaurantPizza
 from faker import Faker
 
