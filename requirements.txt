@@ -5,7 +5,7 @@ blinker
 click
 Faker
 flasgger
-Flask==2.3.3
+Flask
 Flask-Migrate
 Flask-RESTful
 Flask-SQLAlchemy
