@@ -1,7 +1,9 @@
-from home import db
+from home import db,app
 from home.models import Restaurant, Pizza, RestaurantPizza
 from faker import Faker
 
+
+app.app_context().push()
 
 fake = Faker()
 
