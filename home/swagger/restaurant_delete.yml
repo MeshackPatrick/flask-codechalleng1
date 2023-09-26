@@ -1,0 +1,14 @@
+summary: Delete a restaurant
+description: Deletes a restaurant by ID.
+tags:
+  - Restaurants
+parameters:
+  - name: restaurant_id
+    in: path
+    type: integer
+    required: true
+responses:
+  204:
+    description: Restaurant deleted successfully
+  404:
+    description: Restaurant not found

@@ -4,7 +4,7 @@ This is a Flask-based RESTful API for managing pizza restaurants and their pizza
 # Getting started
 These instructions will help you get the project up and running on your local machine.
 
-# prerequisites
+# Prerequisites
 You need to have Python, Flask, and a few other dependencies installed. You can install them using pip:
     pip install Flask Flask-RESTful Flask-SQLAlchemy Flask-Migrate
 # installing
@@ -13,6 +13,6 @@ git clone https://github.com/your-username/pizza-restaurant-api.git
 1Change into the project directory:
 cd pizza-restaurant-api
 2Create a virtual environment:
-python -m venv venv
+  python -m venv venv
 3 Activate the virtual environment
 source venv/bin/activate

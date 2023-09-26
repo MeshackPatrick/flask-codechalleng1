@@ -1,0 +1,36 @@
+summary: Create a new restaurant-pizza association
+description: Create a new RestaurantPizza associated with an existing Pizza and Restaurant.
+tags:
+  - RestaurantPizzas
+parameters:
+  - name: price
+    in: body
+    type: float
+    required: true
+  - name: pizza_id
+    in: body
+    type: integer
+    required: true
+  - name: restaurant_id
+    in: body
+    type: integer
+    required: true
+responses:
+  201:
+    description: RestaurantPizza created successfully
+    schema:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The Pizza ID
+        name:
+          type: string
+          description: The Pizza name
+        ingredients:
+          type: string
+          description: Ingredients used in the Pizza
+  400:
+    description: Missing data or validation errors
+  404:
+    description: Pizza or restaurant not found

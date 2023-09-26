@@ -2,10 +2,11 @@ from flask import request
 from flask_restful import Resource
 from home import api, db
 from home.models import Restaurant, Pizza, RestaurantPizza
-
+from flasgger import swag_from
 
 
 class RestaurantResource(Resource):
+    @swag_from('swagger/restaurant_get.yml')
     def get(self, restaurant_id=None):
         if restaurant_id:
             restaurant = Restaurant.query.get(restaurant_id)
@@ -17,6 +18,7 @@ class RestaurantResource(Resource):
             restaurants = [r.serialize() for r in Restaurant.query.all()]
             return {'restaurants': restaurants}
 
+    @swag_from('swagger/restaurant_delete.yml')
     def delete(self, restaurant_id):
         restaurant = Restaurant.query.get(restaurant_id)
         if restaurant:
@@ -27,12 +29,14 @@ class RestaurantResource(Resource):
 
 
 class PizzaResource(Resource):
+    @swag_from('swagger/pizzas_get.yml')
     def get(self):
         pizzas = [p.serialize() for p in Pizza.query.all()]
         return {'pizzas': pizzas}
 
 
 class RestaurantPizzaResource(Resource):
+    @swag_from('swagger/restaurant_pizzas_post.yml')
     def post(self):
         data = request.get_json()
         price = data.get('price')
@@ -56,7 +60,6 @@ class RestaurantPizzaResource(Resource):
         db.session.commit()
 
         return pizza.serialize(), 201
-
 
 
 api.add_resource(RestaurantResource, '/restaurants', '/restaurants/<int:restaurant_id>')
