@@ -1,5 +1,4 @@
 from home import db
-from sqlalchemy.orm import validates
 
 
 class Restaurant(db.Model):

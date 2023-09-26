@@ -5,7 +5,6 @@ from home.models import Restaurant, Pizza, RestaurantPizza
 
 
 
-
 class RestaurantResource(Resource):
     def get(self, restaurant_id=None):
         if restaurant_id:
