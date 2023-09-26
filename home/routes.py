@@ -58,6 +58,7 @@ class RestaurantPizzaResource(Resource):
         return pizza.serialize(), 201
 
 
+
 api.add_resource(RestaurantResource, '/restaurants', '/restaurants/<int:restaurant_id>')
 api.add_resource(PizzaResource, '/pizzas')
 api.add_resource(RestaurantPizzaResource, '/restaurant_pizzas')

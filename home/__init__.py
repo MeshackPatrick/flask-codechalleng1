@@ -9,4 +9,11 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 api = Api(app)
+
+
+@app.route('/')
+def home():
+    return f'<h1>WELCOME TO PIZAA RESTAURANT</h1>'
+
+
 from home import routes, models
