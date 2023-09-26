@@ -9,10 +9,12 @@ Flask-RESTful
 Flask-SQLAlchemy
 flask-swagger-ui
 greenlet
+gunicorn
 itsdangerous
 Jinja2
 Mako
 MarkupSafe
+packaging
 python-dateutil
 pytz
 six
